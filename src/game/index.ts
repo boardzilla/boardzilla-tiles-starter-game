@@ -69,7 +69,9 @@ export default createGame(MyGamePlayer, MyGame, game => {
     }).chooseOnBoard(
       'token', $.pool.all(Token),
     ).placePiece(
-      'token', player.my(PieceGrid)!
+      'token', player.my(PieceGrid)!, {
+        rotationChoices: [0, 90, 180, 270]
+      }
     ).message(
       `{{player}} drew a {{token}} token.`
     )
@@ -85,7 +87,6 @@ export default createGame(MyGamePlayer, MyGame, game => {
       $.pool.shuffle(),
       game.announce('intro');
     },
-
 
     loop(
       eachPlayer({

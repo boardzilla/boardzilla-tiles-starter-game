@@ -3,7 +3,6 @@ import { render, numberSetting, Space, PieceGrid } from '@boardzilla/core';
 import setup, { Token } from '../game/index.js';
 
 import './style.scss';
-import '@boardzilla/core/index.css';
 
 render(setup, {
   layout: game => {
